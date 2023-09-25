@@ -21,9 +21,9 @@ def get_chat_model(name: ChatModelName, **kwargs) -> BaseChatModel:
     if "model" in kwargs:
         del kwargs["model"]
 
-    if name == ChatModelName.TURBO:
+    if name == ChatModelName.GPT4:
         return ChatOpenAI(model_name=name.value, **kwargs)
-    elif name == ChatModelName.GPT4:
+    elif name == ChatModelName.TURBO:
         return ChatOpenAI(model_name=name.value, **kwargs)
     elif name == ChatModelName.CLAUDE:
         return ChatAnthropic(model=name.value, **kwargs)
